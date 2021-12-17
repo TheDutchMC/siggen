@@ -54,6 +54,10 @@ public class ClassParser {
                 }
             }
 
+            if (declaringInterface != null && declaringInterface.equals(Enum.class.getCanonicalName())) {
+                continue;
+            }
+
             if(declaringInterface != null ) {
                 methodDescriptors[i] = new MethodDescriptor(name, returnType, isStatic, declaringInterface, parameterDescriptors);
             } else {
